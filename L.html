@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L的网页</title>
+    <style>
+        /* 全局样式 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-image: url('dd.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 右上角标志图片 */
+        .corner-logo {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 100;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .corner-logo:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* 页面头部 */
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background-color: rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* 主内容区 - 横向布局 */
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        .content-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: rgba(255,255,255,0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        /* 图片样式 */
+        .fox-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 3px solid #4CAF50;
+        }
+
+        /* 按钮样式 */
+        .sound-button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            display: block;
+            width: 200px;
+        }
+
+        .sound-button:hover {
+            background-color: #3e8e41;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* 视频容器 */
+        .video-container {
+            margin: 30px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 右上角标志 -->
+    <img src="ee.png" alt="网站标志" class="corner-logo">
+    
+    <header>
+        <h1>欢迎来到L的网页</h1>
+        <p>QAQ</p>
+    </header>
+    
+    <div class="main-container">
+        <section class="content-section">
+            <img src="ff.png" alt="Fox team" class="fox-image">
+            <p style="text-align: center; font-size: 1.2em; font-weight: bold;">
+                无所谓，哥是谁？哥是那种被车撞飞都要爬起来扣6的人。
+            </p>
+        </section>
+        
+        <section class="content-section">
+            <button class="sound-button" id="soundBtn">点击我播放音乐</button>
+            <div class="video-container">
+                <video controls poster="fox.jpg">
+                    <source src="gg.mp4" type="video/mp4">
+                    <source src="aa.webm" type="video/webm">
+                
+                </video>
+            </div>
+        </section>
+    </div>
+    
+    <audio id="clickSound">
+        <source src="bb.mp3" type="audio/mpeg">
+    
+    </audio>
+    
+    <script>
+        // 点击发声功能
+        const soundBtn = document.getElementById('soundBtn');
+        const clickSound = document.getElementById('clickSound');
+        
+        soundBtn.addEventListener('click', function() {
+            clickSound.currentTime = 0;
+            clickSound.play();
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CB AE版下载</title>
+    <style>
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+    <!-- 下载按钮 -->
+    <button class="download-btn" id="downloadBtn">CB AE版下载</button>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // 创建一个虚拟的下载链接
+            const link = document.createElement('a');
+            link.href = 'CB_AE版.zip'; 
+            link.download = 'CB_AE版.zip'; 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+        
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTF呼叫系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        #ntfButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        
+        #ntfButton:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+        
+        #ntfButton:active {
+            transform: translateY(1px);
+        }
+        
+        #statusText {
+            font-size: 20px;
+            margin: 20px 0;
+            height: 30px;
+        }
+        
+        #ntfImage {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            max-height: 80%;
+            display: none;
+            z-index: 100;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- 呼叫按钮 -->
+    <button id="ntfButton">呼叫NTF</button>
+    
+    <!-- 状态显示 -->
+    <div id="statusText"></div>
+    
+    <!-- 弹出的图片 -->
+    <img id="ntfImage" src="th.png" alt="NTF标志">
+    
+    <!-- 音频元素 -->
+    <audio id="ntfAudio">
+        <source src="NTF.mp3" type="audio/mpeg">
+     
+    </audio>
+    
+    <script>
+        const ntfButton = document.getElementById('ntfButton');
+        const statusText = document.getElementById('statusText');
+        const ntfAudio = document.getElementById('ntfAudio');
+        const ntfImage = document.getElementById('ntfImage');
+        
+        ntfButton.addEventListener('click', function() {
+            // 禁用按钮防止重复点击
+            ntfButton.disabled = true;
+            ntfButton.style.opacity = '0.7';
+            
+            // 第一步：显示"呼叫NTF中"
+            statusText.textContent = "呼叫NTF中...";
+            
+            // 2秒后执行第二步
+            setTimeout(function() {
+                // 显示"呼叫成功"
+                statusText.textContent = "呼叫成功！";
+                
+                // 显示图片
+                ntfImage.style.display = 'block';
+                
+                // 播放音频
+                ntfAudio.currentTime = 0; // 从头开始播放
+                ntfAudio.play();
+                
+                // 音频播放结束后隐藏图片
+                ntfAudio.onended = function() {
+                    ntfImage.style.display = 'none';
+                    statusText.textContent = "";
+                    ntfButton.disabled = false;
+                    ntfButton.style.opacity = '1';
+                };
+                
+            }, 2000); // 等待2秒
+        });
+    </script>
+</body>
+</html>
